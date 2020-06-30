@@ -9,6 +9,7 @@
 
 namespace LooplineSystems\CloseIoApiWrapper\Model;
 
+use LooplineSystems\CloseIoApiWrapper\Library\Exception\InvalidParamException;
 use LooplineSystems\CloseIoApiWrapper\Library\Exception\InvalidUrlException;
 use LooplineSystems\CloseIoApiWrapper\Library\JsonSerializableHelperTrait;
 use LooplineSystems\CloseIoApiWrapper\Library\ObjectHydrateHelperTrait;
@@ -135,6 +136,8 @@ class Lead implements \JsonSerializable
 
     /**
      * @param array $data
+     *
+     * @throws InvalidParamException
      */
     public function __construct(array $data = null)
     {
@@ -161,7 +164,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $id
+     * @param string $id
      * @return $this
      */
     public function setId($id)
@@ -240,7 +243,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $created_by
+     * @param string $created_by
      * @return $this
      */
     public function setCreatedBy($created_by)
@@ -259,11 +262,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * Set custom fields. They must alraedy exist in your Close instance.
-     * Note that if you set the fields using the unique custom field IDs rather than names (accessible through CustomFieldApi),
-     * it's possible to set null values. Otherwise, setting null will give an error and it's not possible to unset values.
-     *
-     * @param $custom
+     * @param array $custom
      * @return $this
      */
     public function setCustom($custom)
@@ -282,7 +281,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $date_created
+     * @param string $date_created
      * @return $this
      */
     public function setDateCreated($date_created)
@@ -301,7 +300,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $description
+     * @param string $description
      * @return $this
      */
     public function setDescription($description)
@@ -320,7 +319,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $display_name
+     * @param string $display_name
      * @return $this
      */
     public function setDisplayName($display_name)
@@ -339,7 +338,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $name
+     * @param string $name
      * @return $this
      */
     public function setName($name)
@@ -377,7 +376,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $organization
+     * @param string $organization
      * @return $this
      */
     public function setOrganization($organization)
@@ -396,7 +395,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $status
+     * @param string $status
      * @return $this
      */
     public function setStatusId($status)
@@ -433,7 +432,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $status_label
+     * @param string $status_label
      * @return $this
      */
     public function setStatusLabel($status_label)
@@ -471,7 +470,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $url
+     * @param string $url
      * @return $this
      * @throws InvalidUrlException
      */
@@ -496,7 +495,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $created_by_name
+     * @param string $created_by_name
      * @return $this
      */
     public function setCreatedByName($created_by_name)
@@ -515,7 +514,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $date_updated
+     * @param string $date_updated
      * @return $this
      */
     public function setDateUpdated($date_updated)
@@ -534,7 +533,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $html_url
+     * @param string $html_url
      * @return $this
      */
     public function setHtmlUrl($html_url)
@@ -553,7 +552,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $organization_id
+     * @param string $organization_id
      * @return $this
      */
     public function setOrganizationId($organization_id)
@@ -572,7 +571,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $updated_by
+     * @param string $updated_by
      * @return $this
      */
     public function setUpdatedBy($updated_by)
@@ -591,7 +590,7 @@ class Lead implements \JsonSerializable
     }
 
     /**
-     * @param $updated_by_name
+     * @param string $updated_by_name
      * @return $this
      */
     public function setUpdatedByName($updated_by_name)
