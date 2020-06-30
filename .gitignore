@@ -1,6 +1,4 @@
-config/
-!config/config.sample.yml
 vendor/
-tests/LooplineSystems/CloseIoApi/Api/LiveApiTest.php
-tests/build/logs/
+build/
 /composer.lock
+.idea
